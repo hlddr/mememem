@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUTEN — The Meme Coin with a Warped Past</title>
+    <meta name="description" content="PUTEN - A satirical meme coin featuring a distorted caricature. Made in jest, not financial advice.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="PUTEN — The Meme Coin with a Warped Past">
+    <meta property="og:description" content="A satirical meme coin made in jest. Not financial advice.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://puten-coin.com">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /*
+        ====================================
+        README - PUTEN MEME COIN WEBSITE
+        ====================================
+        
+        DEPLOYMENT INSTRUCTIONS:
+        1. Save this file as index.html
+        2. Upload to any static hosting service:
+           - GitHub Pages: Create repo, upload file, enable Pages
+           - Netlify: Drag & drop file to netlify.com/drop
+           - Vercel: Import file via dashboard
+           - Any web server: Place in public/www directory
+        
+        MINIMUM REQUIREMENTS:
+        - Viewport: 1200x700px minimum for full experience
+        - Browser: Modern browser with CSS Grid/Flexbox support
+        - JavaScript: Enabled for full functionality
+        
+        FEATURES:
+        - No vertical scrolling (overflow hidden)
+        - Responsive scaling for smaller screens
+        - Distorted Putin caricature with glitch effects
+        - Rotating coin animation
+        - Tab-based navigation (no scrolling)
+        - Full accessibility support
+        - Legal disclaimer prominently displayed
+        
+        ====================================
+        */
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #0b0b0d;
+            color: #e8e8e8;
+        }
+
+        /* App Container */
+        .app {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Scalable Wrapper */
+        .scale-wrapper {
+            width: 1200px;
+            height: 700px;
+            transform-origin: top left;
+            display: flex;
+            flex-direction: column;
+            background: #0b0b0d;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Header */
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 20px 40px;
+            background: rgba(11, 11, 13, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 45, 149, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 900;
+            color: #ff2d95;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .coin-logo {
+            width: 40px;
+            height: 40px;
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Navigation */
+        .nav-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 2px solid #6aff6a;
+            color: #6aff6a;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 12px;
+        }
+
+        .nav-btn:hover,
+        .nav-btn:focus {
+            background: #6aff6a;
+            color: #0b0b0d;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(106, 255, 106, 0.3);
+        }
+
+        .nav-btn.active {
+            background: #ff2d95;
+            border-color: #ff2d95;
+            color: white;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            display: flex;
+            padding: 100px 40px 60px;
+            gap: 60px;
+            align-items: center;
+        }
+
+        /* Hero Section */
+        .hero-left {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .portrait-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .portrait {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            filter: drop-shadow(0 0 20px rgba(255, 45, 149, 0.3));
+        }
+
+        /* Glitch Effect */
+        .portrait::before,
+        .portrait::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            mix-blend-mode: screen;
+            opacity: 0.8;
+            animation: glitch 2s infinite;
+        }
+
+        .portrait::before {
+            animation-delay: 0.1s;
+            filter: hue-rotate(90deg);
+            transform: translateX(-3px);
+        }
+
+        .portrait::after {
+            animation-delay: 0.2s;
+            filter: hue-rotate(180deg);
+            transform: translateX(3px);
+        }
+
+        @keyframes glitch {
+            0%, 90%, 100% {
+                transform: translateX(0);
+                opacity: 0.8;
+            }
+            10% {
+                transform: translateX(-5px);
+                opacity: 1;
+            }
+            20% {
+                transform: translateX(5px);
+                opacity: 0.9;
+            }
+            30% {
+                transform: translateX(-3px);
+                opacity: 0.8;
+            }
+        }
+
+        .hero-right {
+            flex: 1;
+            padding-left: 40px;
+        }
+
+        .hero-title {
+            font-size: 72px;
+            font-weight: 900;
+            color: #ff2d95;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 16px;
+            text-shadow: 0 0 20px rgba(255, 45, 149, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: #6aff6a;
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+
+        .hero-disclaimer {
+            font-size: 16px;
+            color: #9aa0a6;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            background: linear-gradient(45deg, #ff2d95, #ff6b6b);
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 24px rgba(255, 45, 149, 0.4);
+        }
+
+        .cta-btn:active {
+            transform: translateY(-1px) scale(0.98);
+            animation: pulse 0.3s ease;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.98); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(0.98); }
+        }
+
+        .cta-btn.secondary {
+            background: transparent;
+            border: 2px solid #6aff6a;
+            color: #6aff6a;
+        }
+
+        .cta-btn.secondary:hover {
+            background: #6aff6a;
+            color: #0b0b0d;
+        }
+
+        /* Info Panels */
+        .info-panel {
+            position: absolute;
+            bottom: 60px;
+            left: 40px;
+            right: 40px;
+            background: rgba(30, 30, 35, 0.95);
+            border: 1px solid rgba(255, 45, 149, 0.3);
+            border-radius: 12px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            display: none;
+        }
+
+        .info-panel.active {
+            display: block;
+        }
+
+        .panel-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ff2d95;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .tokenomics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .tokenomics-item {
+            background: rgba(255, 45, 149, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #6aff6a;
+        }
+
+        .tokenomics-label {
+            font-size: 14px;
+            color: #9aa0a6;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .tokenomics-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: #e8e8e8;
+        }
+
+        .roadmap-timeline {
+            display: flex;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .roadmap-phase {
+            flex: 1;
+            background: rgba(106, 255, 106, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 4px solid #6aff6a;
+            text-align: center;
+        }
+
+        .phase-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #6aff6a;
+            margin-bottom: 10px;
+        }
+
+        .phase-description {
+            font-size: 14px;
+            color: #e8e8e8;
+            line-height: 1.5;
+        }
+
+        .socials-grid {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: rgba(255, 45, 149, 0.1);
+            border: 1px solid rgba(255, 45, 149, 0.3);
+            border-radius: 8px;
+            color: #e8e8e8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 45, 149, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .contract-section {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(106, 255, 106, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(106, 255, 106, 0.3);
+        }
+
+        .contract-address {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #6aff6a;
+            word-break: break-all;
+            margin: 10px 0;
+        }
+
+        .copy-btn {
+            background: #6aff6a;
+            color: #0b0b0d;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: #5ee55e;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px 40px;
+            background: rgba(11, 11, 13, 0.9);
+            border-top: 1px solid rgba(255, 45, 149, 0.2);
+            text-align: center;
+            font-size: 12px;
+            color: #9aa0a6;
+        }
+
+        .disclaimer {
+            color: #ff2d95;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Too Small Screen Warning */
+        .too-small-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(11, 11, 13, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .too-small-message {
+            text-align: center;
+            padding: 40px;
+            border: 2px solid #ff2d95;
+            border-radius: 12px;
+            background: rgba(30, 30, 35, 0.9);
+        }
+
+        .too-small-title {
+            font-size: 24px;
+            color: #ff2d95;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .too-small-text {
+            font-size: 16px;
+            color: #e8e8e8;
+            line-height: 1.5;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #6aff6a;
+            color: #0b0b0d;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Focus Styles for Accessibility */
+        *:focus {
+            outline: 2px solid #6aff6a;
+            outline-offset: 2px;
+        }
+
+        button:focus,
+        .nav-btn:focus,
+        .social-link:focus {
+            outline: 2px solid #6aff6a;
+            outline-offset: 2px;
+        }
+
+        /* Screen Reader Only */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 48px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .portrait-container {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .nav-buttons {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .roadmap-timeline {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <!-- Too Small Screen Overlay -->
+        <div id="tooSmall" class="too-small-overlay" role="dialog" aria-labelledby="too-small-title" aria-describedby="too-small-desc">
+            <div class="too-small-message">
+                <h2 id="too-small-title" class="too-small-title">Screen Too Small</h2>
+                <p id="too-small-desc" class="too-small-text">
+                    Please rotate your device or use a larger screen<br>
+                    for the best PUTEN experience.
+                </p>
+            </div>
+        </div>
+
+        <!-- Main Scalable Content -->
+        <div class="scale-wrapper">
+            <!-- Header -->
+            <header role="banner">
+                <div class="header-content">
+                    <div class="logo">
+                        <!-- PUTEN Coin Logo SVG -->
+                        <svg class="coin-logo" viewBox="0 0 100 100" role="img" aria-label="PUTEN coin logo">
+                            <defs>
+                                <linearGradient id="coinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ff2d95"/>
+                                    <stop offset="100%" style="stop-color:#6aff6a"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="50" r="45" fill="url(#coinGradient)" stroke="#6aff6a" stroke-width="2"/>
+                            <!-- Serrated edge -->
+                            <path d="M 95 50 L 90 45 L 95 40 L 90 35 L 95 30 L 90 25 L 95 20 L 90 15 L 95 10 L 88 8 L 82 5 L 75 8 L 70 5 L 65 8 L 60 5 L 55 8 L 50 5 L 45 8 L 40 5 L 35 8 L 30 5 L 25 8 L 20 5 L 15 10 L 10 15 L 5 20 L 10 25 L 5 30 L 10 35 L 5 40 L 10 45 L 5 50 L 10 55 L 5 60 L 10 65 L 5 70 L 10 75 L 5 80 L 10 85 L 15 90 L 20 95 L 25 92 L 30 95 L 35 92 L 40 95 L 45 92 L 50 95 L 55 92 L 60 95 L 65 92 L 70 95 L 75 92 L 82 95 L 88 92 L 95 85 L 90 80 L 95 75 L 90 70 L 95 65 L 90 60 L 95 55 Z" fill="none" stroke="#6aff6a" stroke-width="1" opacity="0.7"/>
+                            <text x="50" y="58" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="900" fill="#0b0b0d">P</text>
+                        </svg>
+                        PUTEN
+                    </div>
+                    <nav role="navigation" aria-label="Main navigation">
+                        <div class="nav-buttons">
+                            <button class="nav-btn active" onclick="switchPanel('home')" aria-pressed="true">Home</button>
+                            <button class="nav-btn" onclick="switchPanel('tokenomics')" aria-pressed="false">Tokenomics</button>
+                            <button class="nav-btn" onclick="switchPanel('roadmap')" aria-pressed="false">Roadmap</button>
+                            <button class="nav-btn" onclick="switchPanel('socials')" aria-pressed="false">Socials</button>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main role="main">
+                <div class="hero-left">
+                    <div class="portrait-container">
+                        <!-- Distorted Putin Caricature SVG -->
+                        <!-- This is a parody/caricature illustration, not photorealistic -->
+                        <svg class="portrait" viewBox="0 0 300 300" role="img" aria-label="Stylized caricature of Vladimir Putin - distorted meme portrait for parody purposes">
+                            <defs>
+                                <!-- Distortion filters for glitch effect -->
+                                <filter id="turbulence" x="0%" y="0%" width="100%" height="100%">
+                                    <feTurbulence baseFrequency="0.02" numOctaves="3" result="noise"/>
+                                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="3"/>
+                                </filter>
+                                <filter id="glitchFilter" x="0%" y="0%" width="100%" height="100%">
+                                    <feOffset in="SourceGraphic" dx="2" dy="1" result="offset1"/>
+                                    <feFlood flood-color="#ff2d95" flood-opacity="0.7" result="color1"/>
+                                    <feComposite in="color1" in2="offset1" operator="in" result="layer1"/>
+                                    
+                                    <feOffset in="SourceGraphic" dx="-2" dy="-1" result="offset2"/>
+                                    <feFlood flood-color="#6aff6a" flood-opacity="0.7" result="color2"/>
+                                    <feComposite in="color2" in2="offset2" operator="in" result="layer2"/>
+                                    
+                                    <feMerge>
+                                        <feMergeNode in="layer1"/>
+                                        <feMergeNode in="layer2"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            
+                            <!-- Base caricature outline - heavily stylized/distorted -->
+                            <g filter="url(#turbulence)">
+                                <!-- Head shape (exaggerated/distorted) -->
+                                <ellipse cx="150" cy="160" rx="80" ry="90" fill="#f4c2a1" stroke="#d4a574" stroke-width="2"/>
+                                
+                                <!-- Hair (stylized) -->
+                                <path d="M 70 120 Q 150 80 230 120 Q 220 100 150 95 Q 80 100 70 120" fill="#8b6f47"/>
+                                
+                                <!-- Eyes (exaggerated small) -->
+                                <ellipse cx="125" cy="140" rx="8" ry="6" fill="#333"/>
+                                <ellipse cx="175" cy="140" rx="8" ry="6" fill="#333"/>
+                                <circle cx="125" cy="138" r="2" fill="#fff"/>
+                                <circle cx="175" cy="138" r="2" fill="#fff"/>
+                                
+                                <!-- Nose (prominent) -->
+                                <path d="M 150 155 L 145 170 L 155 170 Z" fill="#e6b08a"/>
+                                
+                                <!-- Mouth (stern expression) -->
+                                <path d="M 130 190 Q 150 185 170 190" stroke="#999" stroke-width="3" fill="none"/>
+                                
+                                <!-- Ears -->
+                                <ellipse cx="90" cy="150" rx="12" ry="18" fill="#f4c2a1"/>
+                                <ellipse cx="210" cy="150" rx="12" ry="18" fill="#f4c2a1"/>
+                                
+                                <!-- Neck -->
+                                <rect x="130" y="240" width="40" height="30" fill="#f4c2a1"/>
+                                
+                                <!-- Collar/Suit -->
+                                <rect x="110" y="270" width="80" height="30" fill="#2c3e50"/>
+                                <rect x="140" y="270" width="20" height="30" fill="#ff2d95"/>
+                                
+                                <!-- Distortion elements -->
+                                <circle cx="120" cy="180" r="3" fill="#ff2d95" opacity="0.6"/>
+                                <circle cx="180" cy="160" r="2" fill="#6aff6a" opacity="0.8"/>
+                                <rect x="140" y="200" width="20" height="2" fill="#ff2d95" opacity="0.7"/>
+                            </g>
+                            
+                            <!-- Glitch overlay elements -->
+                            <g filter="url(#glitchFilter)" opacity="0.3">
+                                <rect x="100" y="120" width="100" height="5" fill="#ff2d95"/>
+                                <rect x="80" y="180" width="140" height="3" fill="#6aff6a"/>
+                                <rect x="120" y="220" width="60" height="4" fill="#ff2d95"/>
+                            </g>
+                            
+                            <!-- Scanline overlay -->
+                            <defs>
+                                <pattern id="scanlines" patternUnits="userSpaceOnUse" width="100%" height="4">
+                                    <rect width="100%" height="2" fill="transparent"/>
+                                    <rect width="100%" height="2" y="2" fill="#000" opacity="0.1"/>
+                                </pattern>
+                            </defs>
+                            <rect x="0" y="0" width="100%" height="100%" fill="url(#scanlines)"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <h1 class="hero-title">PUTEN</h1>
+                    <h2 class="hero-subtitle">The meme coin with a warped past</h2>
+                    <p class="hero-disclaimer">Made in jest. Not investment advice.</p>
+                    <div class="cta-buttons">
+                        <button class="cta-btn" onclick="buyToken()" aria-label="Buy PUTEN tokens">Buy Now</button>
+                        <button class="cta-btn secondary" onclick="addToWallet()" aria-label="Add PUTEN to wallet">Add to Wallet</button>
+                        <button class="cta-btn secondary" onclick="openWhitepaper()" aria-label="View PUTEN whitepaper">Whitepaper</button>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Info Panels -->
+            <div id="tokenomics" class="info-panel">
+                <h3 class="panel-title">Tokenomics</h3>
+                <div class="tokenomics-grid">
+                    <div class="tokenomics-item">
+                        <div class="tokenomics-label">Symbol</div>
+                        <div class="tokenomics-value">PUTEN</div>
+                    </div>
+                    <div class="tokenomics-item">
+                        <div class="tokenomics-label">Total Supply</div>
+                        <div class="tokenomics-value">1,000,000,000</div>
+                    </div>
+                    <div class="tokenomics-item">
+                        <div class="tokenomics-label">Liquidity Pool</div>
+                        <div class="tokenomics-value">60%</div>
+                    </div>
+                    <div class="tokenomics-item">
+                        <div class="tokenomics-label">Development</div>
+                        <div class="tokenomics-value">20%</div>
+                    </div>
+                    <div class="tokenomics-item">
+                        <div class="tokenomics-label">Marketing</div>
+                        <div class="tokenomics-value">10%</div>
+                    </div>
+                    <div class="tokenomics-item">
+                        <div class="tokenomics-label">Burn</div>
+                        <div class="tokenomics-value">10%</div>
+                    </div>
+                </div>
+                <div class="contract-section">
+                    <div class="tokenomics-label">Contract Address (Placeholder)</div>
+                    <div class="contract-address" id="contractAddress">0xDEADBEEF1234567890ABCDEF1234567890DEADBEEF</div>
+                    <button class="copy-btn" onclick="copyContract()" aria-label="Copy contract address">Copy Address</button>
+                </div>
+            </div>
+
+            <div id="roadmap" class="info-panel">
+                <h3 class="panel-title">Roadmap</h3>
+                <div class="roadmap-timeline">
+                    <div class="roadmap-phase">
+                        <div class="phase-title">Q1 2024</div>
+                        <div class="phase-description">Website launch & viral meme campaign. Community building and initial token distribution.</div>
+                    </div>
+                    <div class="roadmap-phase">
+                        <div class="phase-title">Q2 2024</div>
+                        <div class="phase-description">DEX listing on major platforms. Airdrop to early subscribers and meme contest winners.</div>
+                    </div>
+                    <div class="roadmap-phase">
+                        <div class="phase-title">Q3 2024</div>
+                        <div class="phase-description">Merchandise launch & "Warped Portraits" NFT collection featuring distorted political figures.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="socials" class="info-panel">
+                <h3 class="panel-title">Join the Community</h3>
+                <div class="socials-grid">
+                    <a href="#" class="social-link" aria-label="Join PUTEN Telegram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.374 0 0 5.373 0 12s5.374 12 12 12 12-5.373 12-12S18.626 0 12 0zm5.568 8.16l-1.61 7.548c-.121.552-.441.689-.892.428l-2.463-1.816-1.187 1.138c-.131.131-.242.242-.497.242l.177-2.517 4.589-4.14c.199-.177-.043-.275-.309-.098l-5.674 3.57-2.444-.763c-.531-.166-.542-.531.111-.785l9.545-3.677c.443-.166.831.098.686.785h-.006z"/>
+                        </svg>
+                        Telegram
+                    </a>
+                    <a href="#" class="social-link" aria-label="Follow PUTEN on Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                        Twitter
+                    </a>
+                    <a href="#" class="social-link" aria-label="Join PUTEN Discord">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                        </svg>
+                        Discord
+                    </a>
+                    <a href="#" class="social-link" aria-label="View PUTEN on Reddit">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+                        </svg>
+                        Reddit
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer role="contentinfo">
+                <p class="disclaimer">⚠️ THIS IS A PARODY / MEME. NOT FINANCIAL ADVICE. ⚠️</p>
+                <p>The author is not responsible for your actions. All contract addresses are placeholders. © 2024 PUTEN Meme Coin</p>
+            </footer>
+        </div>
+
+        <!-- Toast Notification -->
+        <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+    </div>
+
+    <script>
+        // Global variables
+        let currentPanel = 'home';
+        const CONTRACT_ADDRESS = '0xDEADBEEF1234567890ABCDEF1234567890DEADBEEF';
+
+        // Initialize the application
+        function init() {
+            applyScale();
+            setupKeyboardNavigation();
+            setupAccessibility();
+        }
+
+        // Responsive scaling function
+        function applyScale() {
+            const wrapper = document.querySelector('.scale-wrapper');
+            const overlay = document.getElementById('tooSmall');
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            const baseWidth = 1200;
+            const baseHeight = 700;
+            
+            const scaleX = windowWidth / baseWidth;
+            const scaleY = windowHeight / baseHeight;
+            const scale = Math.min(scaleX, scaleY);
+            
+            if (scale < 0.45) {
+                overlay.style.display = 'flex';
+                wrapper.style.transform = 'scale(0.45)';
+                wrapper.style.left = '50%';
+                wrapper.style.top = '50%';
+                wrapper.style.marginLeft = '-' + (baseWidth * 0.45 / 2) + 'px';
+                wrapper.style.marginTop = '-' + (baseHeight * 0.45 / 2) + 'px';
+            } else {
+                overlay.style.display = 'none';
+                wrapper.style.transform = `scale(${scale})`;
+                wrapper.style.left = '50%';
+                wrapper.style.top = '50%';
+                wrapper.style.marginLeft = '-' + (baseWidth * scale / 2) + 'px';
+                wrapper.style.marginTop = '-' + (baseHeight * scale / 2) + 'px';
+            }
+        }
+
+        // Panel switching function
+        function switchPanel(panelId) {
+            // Hide all panels
+            document.querySelectorAll('.info-panel').forEach(panel => {
+                panel.classList.remove('active');
+            });
+            
+            // Update navigation buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-pressed', 'false');
+            });
+            
+            // Show selected panel (except for home)
+            if (panelId !== 'home') {
+                const targetPanel = document.getElementById(panelId);
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                }
+            }
+            
+            // Update active button
+            const activeBtn = document.querySelector(`[onclick="switchPanel('${panelId}')"]`);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+                activeBtn.setAttribute('aria-pressed', 'true');
+            }
+            
+            currentPanel = panelId;
+        }
+
+        // Copy contract address function
+        function copyContract() {
+            navigator.clipboard.writeText(CONTRACT_ADDRESS).then(() => {
+                showToast('Contract address copied to clipboard!');
+            }).catch(() => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = CONTRACT_ADDRESS;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast('Contract address copied to clipboard!');
+            });
+        }
+
+        // CTA button functions (placeholders)
+        function buyToken() {
+            showToast('Buy functionality would redirect to DEX (placeholder)');
+        }
+
+        function addToWallet() {
+            showToast('Add to wallet functionality (placeholder)');
+        }
+
+        function openWhitepaper() {
+            showToast('Whitepaper would open here (placeholder)');
+        }
+
+        // Toast notification function
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Keyboard navigation setup
+        function setupKeyboardNavigation() {
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                    const panels = ['home', 'tokenomics', 'roadmap', 'socials'];
+                    const currentIndex = panels.indexOf(currentPanel);
+                    let newIndex;
+                    
+                    if (e.key === 'ArrowLeft') {
+                        newIndex = currentIndex > 0 ? currentIndex - 1 : panels.length - 1;
+                    } else {
+                        newIndex = currentIndex < panels.length - 1 ? currentIndex + 1 : 0;
+                    }
+                    
+                    switchPanel(panels[newIndex]);
+                    e.preventDefault();
+                }
+                
+                // Copy contract with Ctrl+C when on tokenomics panel
+                if (e.ctrlKey && e.key === 'c' && currentPanel === 'tokenomics') {
+                    copyContract();
+                    e.preventDefault();
+                }
+            });
+        }
+
+        // Accessibility enhancements
+        function setupAccessibility() {
+            // Add skip link functionality
+            const skipLink = document.createElement('a');
+            skipLink.href = '#main';
+            skipLink.textContent = 'Skip to main content';
+            skipLink.className = 'sr-only';
+            skipLink.style.position = 'absolute';
+            skipLink.style.left = '-9999px';
+            skipLink.addEventListener('focus', () => {
+                skipLink.style.left = '10px';
+                skipLink.style.top = '10px';
+                skipLink.style.zIndex = '9999';
+                skipLink.style.background = '#6aff6a';
+                skipLink.style.color = '#0b0b0d';
+                skipLink.style.padding = '8px';
+                skipLink.style.textDecoration = 'none';
+                skipLink.style.borderRadius = '4px';
+            });
+            skipLink.addEventListener('blur', () => {
+                skipLink.style.left = '-9999px';
+            });
+            document.body.insertBefore(skipLink, document.body.firstChild);
+            
+            // Add main ID for skip link
+            document.querySelector('main').id = 'main';
+        }
+
+        // Enhanced glitch effect activation
+        function activateGlitch() {
+            const portrait = document.querySelector('.portrait');
+            portrait.style.animation = 'glitch 0.5s ease-in-out';
+            
+            setTimeout(() => {
+                portrait.style.animation = '';
+            }, 500);
+        }
+
+        // Add click event to portrait for glitch effect
+        document.addEventListener('DOMContentLoaded', () => {
+            const portrait = document.querySelector('.portrait');
+            if (portrait) {
+                portrait.addEventListener('click', activateGlitch);
+                portrait.style.cursor = 'pointer';
+                portrait.setAttribute('tabindex', '0');
+                portrait.setAttribute('role', 'button');
+                portrait.setAttribute('aria-label', 'Click to activate glitch effect on portrait');
+                
+                portrait.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        activateGlitch();
+                        e.preventDefault();
+                    }
+                });
+            }
+        });
+
+        // Window event listeners
+        window.addEventListener('resize', applyScale);
+        window.addEventListener('load', init);
+        window.addEventListener('DOMContentLoaded', init);
+
+        // Preload critical functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize default state
+            switchPanel('home');
+            
+            // Add enhanced hover effects
+            const ctaBtns = document.querySelectorAll('.cta-btn');
+            ctaBtns.forEach(btn => {
+                btn.addEventListener('mouseenter', () => {
+                    btn.style.transform = 'translateY(-3px) scale(1.05)';
+                });
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = '';
+                });
+            });
+            
+            // Add coin rotation pause on hover
+            const coinLogo = document.querySelector('.coin-logo');
+            if (coinLogo) {
+                coinLogo.addEventListener('mouseenter', () => {
+                    coinLogo.style.animationPlayState = 'paused';
+                });
+                coinLogo.addEventListener('mouseleave', () => {
+                    coinLogo.style.animationPlayState = 'running';
+                });
+            }
+        });
+
+        // Error handling for missing elements
+        window.addEventListener('error', (e) => {
+            console.warn('PUTEN site error:', e.message);
+        });
+
+        // Performance optimization: Reduce animations on mobile
+        if (window.innerWidth < 768) {
+            document.addEventListener('DOMContentLoaded', () => {
+                const style = document.createElement('style');
+                style.textContent = `
+                    .portrait::before,
+                    .portrait::after {
+                        display: none;
+                    }
+                    .coin-logo {
+                        animation-duration: 8s;
+                    }
+                `;
+                document.head.appendChild(style);
+            });
+        }
+    </script>
+</body>
+</html>
