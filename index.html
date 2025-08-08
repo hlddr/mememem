@@ -71,13 +71,14 @@
             align-items: center;
             justify-content: center;
             position: relative;
+            background: #0b0b0d;
         }
 
         /* Scalable Wrapper */
         .scale-wrapper {
             width: 1200px;
             height: 700px;
-            transform-origin: top left;
+            transform-origin: center center;
             display: flex;
             flex-direction: column;
             background: #0b0b0d;
@@ -842,35 +843,33 @@
             setupAccessibility();
         }
 
-        // Responsive scaling function
-        function applyScale() {
-            const wrapper = document.querySelector('.scale-wrapper');
-            const overlay = document.getElementById('tooSmall');
-            const windowWidth = window.innerWidth;
-            const windowHeight = window.innerHeight;
-            const baseWidth = 1200;
-            const baseHeight = 700;
-            
-            const scaleX = windowWidth / baseWidth;
-            const scaleY = windowHeight / baseHeight;
-            const scale = Math.min(scaleX, scaleY);
-            
-            if (scale < 0.45) {
-                overlay.style.display = 'flex';
-                wrapper.style.transform = 'scale(0.45)';
-                wrapper.style.left = '50%';
-                wrapper.style.top = '50%';
-                wrapper.style.marginLeft = '-' + (baseWidth * 0.45 / 2) + 'px';
-                wrapper.style.marginTop = '-' + (baseHeight * 0.45 / 2) + 'px';
-            } else {
-                overlay.style.display = 'none';
-                wrapper.style.transform = `scale(${scale})`;
-                wrapper.style.left = '50%';
-                wrapper.style.top = '50%';
-                wrapper.style.marginLeft = '-' + (baseWidth * scale / 2) + 'px';
-                wrapper.style.marginTop = '-' + (baseHeight * scale / 2) + 'px';
-            }
-        }
+                 // Responsive scaling function
+         function applyScale() {
+             const wrapper = document.querySelector('.scale-wrapper');
+             const overlay = document.getElementById('tooSmall');
+             const windowWidth = window.innerWidth;
+             const windowHeight = window.innerHeight;
+             const baseWidth = 1200;
+             const baseHeight = 700;
+             
+             const scaleX = windowWidth / baseWidth;
+             const scaleY = windowHeight / baseHeight;
+             const scale = Math.min(scaleX, scaleY);
+             
+             if (scale < 0.45) {
+                 overlay.style.display = 'flex';
+                 wrapper.style.transform = 'scale(0.45)';
+             } else {
+                 overlay.style.display = 'none';
+                 wrapper.style.transform = `scale(${scale})`;
+             }
+             
+             // Remove any positioning styles that might interfere with flexbox centering
+             wrapper.style.left = '';
+             wrapper.style.top = '';
+             wrapper.style.marginLeft = '';
+             wrapper.style.marginTop = '';
+         }
 
         // Panel switching function
         function switchPanel(panelId) {
