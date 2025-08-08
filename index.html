@@ -84,6 +84,8 @@
             background: #0b0b0d;
             position: relative;
             overflow: hidden;
+            margin: auto;
+            flex-shrink: 0;
         }
 
         /* Header */
@@ -843,33 +845,36 @@
             setupAccessibility();
         }
 
-                 // Responsive scaling function
-         function applyScale() {
-             const wrapper = document.querySelector('.scale-wrapper');
-             const overlay = document.getElementById('tooSmall');
-             const windowWidth = window.innerWidth;
-             const windowHeight = window.innerHeight;
-             const baseWidth = 1200;
-             const baseHeight = 700;
-             
-             const scaleX = windowWidth / baseWidth;
-             const scaleY = windowHeight / baseHeight;
-             const scale = Math.min(scaleX, scaleY);
-             
-             if (scale < 0.45) {
-                 overlay.style.display = 'flex';
-                 wrapper.style.transform = 'scale(0.45)';
-             } else {
-                 overlay.style.display = 'none';
-                 wrapper.style.transform = `scale(${scale})`;
-             }
-             
-             // Remove any positioning styles that might interfere with flexbox centering
-             wrapper.style.left = '';
-             wrapper.style.top = '';
-             wrapper.style.marginLeft = '';
-             wrapper.style.marginTop = '';
-         }
+                                   // Responsive scaling function
+          function applyScale() {
+              const wrapper = document.querySelector('.scale-wrapper');
+              const overlay = document.getElementById('tooSmall');
+              const windowWidth = window.innerWidth;
+              const windowHeight = window.innerHeight;
+              const baseWidth = 1200;
+              const baseHeight = 700;
+              
+              const scaleX = windowWidth / baseWidth;
+              const scaleY = windowHeight / baseHeight;
+              const scale = Math.min(scaleX, scaleY);
+              
+              // Always apply scale, even if it's 1.0 or larger (for desktop)
+              const finalScale = Math.min(scale, 1.0); // Cap at 1.0 so it doesn't get bigger than designed
+              
+              if (finalScale < 0.45) {
+                  overlay.style.display = 'flex';
+                  wrapper.style.transform = 'scale(0.45)';
+              } else {
+                  overlay.style.display = 'none';
+                  wrapper.style.transform = `scale(${finalScale})`;
+              }
+              
+              // Ensure wrapper is always centered
+              wrapper.style.position = 'relative';
+              wrapper.style.left = 'auto';
+              wrapper.style.top = 'auto';
+              wrapper.style.margin = 'auto';
+          }
 
         // Panel switching function
         function switchPanel(panelId) {
