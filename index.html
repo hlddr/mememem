@@ -1,490 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Russian Final Boss - The Ultimate Meme Coin on Solana</title>
-    <meta name="description" content="Russian Final Boss ($RUBOSS) - The ultimate meme coin on Solana. Launched via Pump.fun. For entertainment only.">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Russian Final Boss - The Ultimate Meme Coin on Solana">
-    <meta property="og:description" content="Russian Final Boss ($RUBOSS) - The ultimate meme coin on Solana. Launched via Pump.fun.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="./assets/social-preview.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Russian Final Boss - The Ultimate Meme Coin on Solana">
-    <meta name="twitter:description" content="Russian Final Boss ($RUBOSS) - The ultimate meme coin on Solana. Launched via Pump.fun.">
-    <meta name="twitter:image" content="./assets/social-preview.jpg">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
-    
-    <!-- Preload Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                        'mono': ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        'primary': '#ff4757',
-                        'secondary': '#ffa502',
-                        'accent': '#3742fa',
-                        'dark-bg': '#0c0c0c',
-                        'dark-card': '#1a1a1a',
-                        'dark-border': '#333333',
-                    },
-                    animation: {
-                        'glow': 'glow 2s ease-in-out infinite alternate',
-                        'float': 'float 3s ease-in-out infinite',
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <style>
-        /* Custom animations */
-        @keyframes glow {
-            from { box-shadow: 0 0 20px rgba(255, 71, 87, 0.5); }
-            to { box-shadow: 0 0 30px rgba(255, 71, 87, 0.8), 0 0 40px rgba(255, 71, 87, 0.4); }
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        /* Hero background */
-        .hero-bg {
-            background: linear-gradient(135deg, rgba(12, 12, 12, 0.8), rgba(26, 26, 26, 0.9)), 
-                        url('./assets/hero-bg.gif') center/cover no-repeat;
-            min-height: 100vh;
-        }
-        
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: #1a1a1a;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: #ff4757;
-            border-radius: 4px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: #ff3742;
-        }
-        
-        /* Copy button animation */
-        .copy-btn {
-            transition: all 0.3s ease;
-        }
-        
-        .copy-btn:hover {
-            transform: scale(1.05);
-        }
-        
-        /* Gradient text */
-        .gradient-text {
-            background: linear-gradient(135deg, #ff4757, #ffa502);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meowchi — $MOCHI</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #b5f5d0, #ffd4e1, #dcd6f7);
+      background-size: 400% 400%;
+      animation: gradientShift 12s ease infinite;
+      font-family: 'Fredoka One', cursive;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .sugar-dust {
+      background-image: radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .mascot {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: #fff0f6;
+      box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .wobble:hover {
+      animation: wobble 0.8s ease-in-out infinite;
+    }
+    @keyframes wobble {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-3deg); }
+      75% { transform: rotate(3deg); }
+    }
+  </style>
 </head>
+<body class="text-center text-gray-800">
 
-<body class="dark bg-dark-bg text-white font-inter antialiased">
-    <!-- Navigation Header -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark-bg/90 backdrop-blur-md border-b border-dark-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <!-- Logo/Brand -->
-                <div class="flex items-center">
-                    <img src="./assets/logo.png" alt="Russian Final Boss Logo" class="h-8 w-8 mr-3">
-                    <span class="font-bold text-xl gradient-text">Russian Final Boss</span>
-                </div>
-                
-                <!-- Navigation Buttons -->
-                <div class="flex items-center space-x-4">
-                    <button onclick="scrollToSection('how-to-buy')" 
-                            class="hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-dark-card hover:bg-dark-border border border-dark-border rounded-lg transition-colors duration-200">
-                        How to Buy
-                    </button>
-                    <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=J761e7uqZdWXCa7aEkeuuc2DppDsWXZQ8GKEJweu5hUC" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center px-4 py-2 text-sm font-bold text-white bg-primary hover:bg-red-600 rounded-lg transition-colors duration-200 animate-glow">
-                        Buy on PumpSwap
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+  <!-- Hero Section -->
+  <section class="flex flex-col items-center justify-center min-h-screen">
+    <div id="mascot" class="mascot">🐱</div>
+    <h1 class="mt-6 text-4xl">Press to bless. Trade with sweet luck.</h1>
+    <div class="mt-4 space-x-4">
+      <a href="#buy" class="px-6 py-3 bg-pink-200 rounded-full shadow hover:scale-105 transform transition">Buy $MOCHI</a>
+      <a href="#community" class="px-6 py-3 bg-mint-200 rounded-full shadow hover:scale-105 transform transition">Join Community</a>
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section class="hero-bg flex items-center justify-center min-h-screen relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-            <div class="animate-float">
-            
-            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black mb-6 gradient-text leading-tight">
-                Russian Final Boss
-            </h1>
-            
-            <p class="text-lg sm:text-xl lg:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                The ultimate meme coin on Solana. Launched via Pump.fun. 
-                <br class="hidden sm:block">
-                View chart on Dexscreener. Trade instantly on PumpSwap.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=J761e7uqZdWXCa7aEkeuuc2DppDsWXZQ8GKEJweu5hUC" target="_blank" rel="noopener noreferrer"
-                   class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-primary hover:bg-red-600 rounded-xl transition-all duration-200 transform hover:scale-105 animate-glow">
-                    🚀 Buy on PumpSwap
-                </a>
-                <a href="https://dexscreener.com" target="_blank" rel="noopener noreferrer"
-                   class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-secondary hover:bg-orange-600 rounded-xl transition-all duration-200 transform hover:scale-105">
-                    📈 View Dexscreener
-                </a>
-            </div>
-            
-            <div class="flex items-center justify-center gap-6">
-                <a href="https://x.com/RussiaFinalBoss" target="_blank" rel="noopener noreferrer"
-                   class="p-3 bg-dark-card hover:bg-dark-border border border-dark-border rounded-lg transition-colors duration-200">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                    </svg>
-                </a>
-                <a href="https://t.me/russianfinalboss" target="_blank" rel="noopener noreferrer"
-                   class="p-3 bg-dark-card hover:bg-dark-border border border-dark-border rounded-lg transition-colors duration-200">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
+  <!-- About -->
+  <section id="about" class="py-20 sugar-dust">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl mb-4">About Meowchi</h2>
+      <p>Meowchi is a soft, round mochi-cat with tiny paws, glossy jelly ears, and powdered-sugar cheeks. Press Meowchi before your trades for good luck and a cozy dose of cuteness.</p>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-dark-bg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black mb-6 gradient-text">
-                        About Russian Final Boss
-                    </h2>
-                    
-                    <!-- REPLACE THIS TEXT WITH YOUR PROJECT DESCRIPTION -->
-                    <div class="text-lg text-gray-300 space-y-4 mb-8">
-                        <p>
-                            Russian Final Boss represents the ultimate evolution in the meme coin space. 
-                            Born from the depths of internet culture and powered by the Solana blockchain, 
-                            this project brings together cutting-edge technology with pure meme energy.
-                        </p>
-                        <p>
-                            Launched on Pump.fun with zero presale and fair distribution, Russian Final Boss 
-                            embodies the true spirit of decentralized finance while maintaining the humor 
-                            and community-driven approach that makes meme coins special.
-                        </p>
-                        <p>
-                            Join the army of Final Boss holders and experience the next level of meme coin evolution.
-                        </p>
-                    </div>
-                    
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div class="bg-dark-card border border-dark-border rounded-lg p-4">
-                            <h3 class="font-bold text-primary mb-2">Chain</h3>
-                            <p class="text-gray-300">Solana</p>
-                        </div>
-                        <div class="bg-dark-card border border-dark-border rounded-lg p-4">
-                            <h3 class="font-bold text-primary mb-2">Launch Platform</h3>
-                            <p class="text-gray-300">Pump.fun</p>
-                        </div>
-                        <div class="bg-dark-card border border-dark-border rounded-lg p-4">
-                            <h3 class="font-bold text-primary mb-2">Ticker</h3>
-                            <p class="text-gray-300 font-mono">$RUBOSS</p>
-                        </div>
-                        <div class="bg-dark-card border border-dark-border rounded-lg p-4">
-                            <h3 class="font-bold text-primary mb-2">Supply</h3>
-                            <p class="text-gray-300">1B Tokens</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="flex justify-center lg:justify-end">
-                    <!-- Replace with your static image or GIF -->
-                    <img src="./assets/about-image.gif" alt="Russian Final Boss About" 
-                         class="max-w-md w-full rounded-2xl shadow-2xl animate-float">
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Tokenomics -->
+  <section id="tokenomics" class="py-20">
+    <h2 class="text-3xl mb-8">Tokenomics</h2>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+      <div class="bg-pink-100 rounded-xl p-6 shadow hover:scale-105 transform transition">Community — 50%</div>
+      <div class="bg-mint-100 rounded-xl p-6 shadow hover:scale-105 transform transition">Liquidity — 30%</div>
+      <div class="bg-purple-100 rounded-xl p-6 shadow hover:scale-105 transform transition">Marketing — 10%</div>
+      <div class="bg-yellow-100 rounded-xl p-6 shadow hover:scale-105 transform transition">Reserve — 10%</div>
+    </div>
+  </section>
 
-    <!-- How to Buy Section -->
-    <section id="how-to-buy" class="py-20 bg-dark-card">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-center mb-12 gradient-text">
-                How to Buy
-            </h2>
-            
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-dark-bg border border-dark-border rounded-xl p-6 text-center">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-2xl font-bold">1</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Get SOL</h3>
-                    <p class="text-gray-400">
-                        Get SOL in your wallet (Phantom, Solflare, etc.).
-                        Make sure you have enough for gas fees.
-                    </p>
-                </div>
-                
-                <div class="bg-dark-bg border border-dark-border rounded-xl p-6 text-center">
-                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-2xl font-bold">2</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Connect Wallet</h3>
-                    <p class="text-gray-400">
-                        Click "Buy on PumpSwap" and connect your wallet.
-                        Ensure you're on the correct network.
-                    </p>
-                </div>
-                
-                <div class="bg-dark-bg border border-dark-border rounded-xl p-6 text-center">
-                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-2xl font-bold">3</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Swap SOL</h3>
-                    <p class="text-gray-400">
-                        Swap SOL for $RUBOSS using the token address below.
-                        Start with a small amount first.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="bg-dark-bg border border-dark-border rounded-xl p-6">
-                <h3 class="text-xl font-bold mb-4 text-center">Token Contract Address</h3>
-                <div class="flex items-center justify-between bg-dark-card border border-dark-border rounded-lg p-4">
-                    <code id="contract-address" class="font-mono text-sm sm:text-base text-gray-300 break-all">
-                        <!-- REPLACE WITH YOUR ACTUAL CONTRACT ADDRESS -->
-                        J761e7uqZdWXCa7aEkeuuc2DppDsWXZQ8GKEJweu5hUC
-                    </code>
-                    <button onclick="copyToClipboard()" 
-                            class="ml-4 copy-btn bg-primary hover:bg-red-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200">
-                        Copy
-                    </button>
-                </div>
-                <p class="text-sm text-gray-500 text-center mt-2">
-                    Always verify the contract address before trading
-                </p>
-            </div>
-        </div>
-    </section>
+  <!-- Roadmap -->
+  <section id="roadmap" class="py-20 sugar-dust">
+    <h2 class="text-3xl mb-8">Roadmap</h2>
+    <div class="max-w-4xl mx-auto text-left">
+      <ul class="space-y-4">
+        <li>🚀 Launch & Airdrop</li>
+        <li>📈 Listings & Partnerships</li>
+        <li>🎉 Community Events</li>
+        <li>❓ Secret Sweet Surprise</li>
+      </ul>
+    </div>
+  </section>
 
-    <!-- Official Links Section -->
-    <section class="py-20 bg-dark-bg">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-center mb-12 gradient-text">
-                Official Links
-            </h2>
-            
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=J761e7uqZdWXCa7aEkeuuc2DppDsWXZQ8GKEJweu5hUC" target="_blank" rel="noopener noreferrer"
-                   class="bg-dark-card border border-dark-border hover:border-primary rounded-xl p-6 text-center transition-all duration-200 transform hover:scale-105 group">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:animate-glow">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.568 14.976c-.306 1.234-1.512 2.088-2.88 2.088-1.584 0-2.88-1.296-2.88-2.88 0-.36.072-.696.192-1.008L9.36 11.52c-.36.216-.792.336-1.248.336-1.296 0-2.352-1.056-2.352-2.352S6.816 7.152 8.112 7.152c.456 0 .888.12 1.248.336L12 9.144c.36-.216.792-.336 1.248-.336 1.296 0 2.352 1.056 2.352 2.352 0 .456-.12.888-.336 1.248l1.656 2.64c.36-.12.696-.192 1.008-.192 1.584 0 2.88 1.296 2.88 2.88 0 1.368-.854 2.574-2.088 2.88z"/>
-                        </svg>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">PumpSwap</h3>
-                    <p class="text-gray-400 text-sm">Trade $RUBOSS</p>
-                </a>
-                
-                <a href="https://dexscreener.com" target="_blank" rel="noopener noreferrer"
-                   class="bg-dark-card border border-dark-border hover:border-secondary rounded-xl p-6 text-center transition-all duration-200 transform hover:scale-105 group">
-                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
-                        </svg>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Dexscreener</h3>
-                    <p class="text-gray-400 text-sm">View Chart</p>
-                </a>
-                
-                <a href="https://x.com/RussiaFinalBosss" target="_blank" rel="noopener noreferrer"
-                   class="bg-dark-card border border-dark-border hover:border-blue-500 rounded-xl p-6 text-center transition-all duration-200 transform hover:scale-105 group">
-                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Twitter</h3>
-                    <p class="text-gray-400 text-sm">Follow Us</p>
-                </a>
-                
-                <a href="https://t.me/russianfinalboss" target="_blank" rel="noopener noreferrer"
-                   class="bg-dark-card border border-dark-border hover:border-blue-400 rounded-xl p-6 text-center transition-all duration-200 transform hover:scale-105 group">
-                    <div class="w-16 h-16 bg-blue-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-                        </svg>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Telegram</h3>
-                    <p class="text-gray-400 text-sm">Join Community</p>
-                </a>
-            </div>
-        </div>
-    </section>
+  <!-- Community -->
+  <section id="community" class="py-20">
+    <h2 class="text-3xl mb-8">Join the Community</h2>
+    <div class="flex justify-center space-x-6">
+      <a href="#" class="wobble bg-blue-200 p-4 rounded-full">Twitter</a>
+      <a href="#" class="wobble bg-green-200 p-4 rounded-full">Telegram</a>
+      <a href="#" class="wobble bg-purple-200 p-4 rounded-full">Discord</a>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark-card border-t border-dark-border py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <p class="text-gray-500 text-sm">
-                    © 2025 Russian Final Boss. For entertainment only. Not financial advice.
-                </p>
-                <p class="text-gray-600 text-xs mt-2">
-                    Cryptocurrency involves risk. Please invest responsibly and do your own research.
-                </p>
-            </div>
-        </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="py-6 text-sm text-gray-600 sugar-dust">
+    <p>This is a meme coin. No promises, only squishes.</p>
+  </footer>
 
-    <!-- JavaScript -->
-    <script>
-        // Smooth scrolling function
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                const offsetTop = element.offsetTop - 80; // Account for fixed header
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        }
+  <script>
+    const mascot = document.getElementById('mascot');
+    mascot.addEventListener('mousedown', () => {
+      gsap.to(mascot, { scale: 0.85, duration: 0.2 });
+    });
+    mascot.addEventListener('mouseup', () => {
+      gsap.to(mascot, { scale: 1, ease: "elastic.out(1, 0.4)", duration: 1.2 });
+    });
+    mascot.addEventListener('touchstart', () => {
+      gsap.to(mascot, { scale: 0.85, duration: 0.2 });
+    });
+    mascot.addEventListener('touchend', () => {
+      gsap.to(mascot, { scale: 1, ease: "elastic.out(1, 0.4)", duration: 1.2 });
+    });
+  </script>
 
-        // Copy to clipboard function
-        async function copyToClipboard() {
-            const contractAddress = document.getElementById('contract-address').textContent.trim();
-            const button = event.target;
-            
-            try {
-                await navigator.clipboard.writeText(contractAddress);
-                
-                // Visual feedback
-                const originalText = button.textContent;
-                button.textContent = 'Copied!';
-                button.classList.add('bg-green-600');
-                button.classList.remove('bg-primary');
-                
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.classList.remove('bg-green-600');
-                    button.classList.add('bg-primary');
-                }, 2000);
-                
-            } catch (err) {
-                console.error('Failed to copy: ', err);
-                // Fallback for older browsers
-                const textArea = document.createElement('textarea');
-                textArea.value = contractAddress;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                
-                button.textContent = 'Copied!';
-                setTimeout(() => {
-                    button.textContent = 'Copy';
-                }, 2000);
-            }
-        }
-
-        // Add scroll effect to navigation
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.classList.add('bg-dark-bg/95');
-            } else {
-                nav.classList.remove('bg-dark-bg/95');
-            }
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Add fade-in animation class
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fade-in {
-                from { opacity: 0; transform: translateY(30px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-            .animate-fade-in {
-                animation: fade-in 0.8s ease-out forwards;
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Preload images for better performance
-        function preloadImages() {
-            const images = [
-                './assets/hero-bg.gif',
-                './assets/main-character.gif',
-                './assets/about-image.gif',
-                './assets/logo.png'
-            ];
-            
-            images.forEach(src => {
-                const img = new Image();
-                img.src = src;
-            });
-        }
-
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            preloadImages();
-        });
-    </script>
 </body>
 </html>
